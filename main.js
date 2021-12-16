@@ -46,15 +46,19 @@ const showData = (datas, count) => {
     });
 };
 
-window.onload = async () => {
-    let forecast = await query(default_city);
+const controllProcesses = async (city = default_city) => {
+    let forecast = await query(city);
     let relevantData = filterResults(forecast);
     showData(relevantData, 5);
-};
+
+}
+
+window.onload = () => controllProcesses();
 
 s("search_btn").onclick = () => {
     s("form_page").style.display = "none";
     s("forecast_page").style.display = "block";
+    controllProcesses(s("city_input").value);
 }
 
 s("back_btn").onclick = () => {
