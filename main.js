@@ -33,11 +33,11 @@ const showData = (datas, count) => {
         if(index >= count){
             return;
         }
-        
+
         if(index == 0){
             cards[0].children[0].style.background = `url('/images/${data.weather[0].icon}.svg') no-repeat`;
             cards[0].children[1].innerHTML = `${data.main.temp} °C`;
-            cards[0].children[2].innerHTML = data.main.humidity;
+            cards[0].children[2].innerHTML = `${data.main.humidity} %`;
         }
         else{
             cards[index].children[0].style.background = `url('/images/${data.weather[0].icon}.svg') no-repeat`;
