@@ -51,3 +51,13 @@ window.onload = async () => {
     let relevantData = filterResults(forecast);
     showData(relevantData, 5);
 };
+
+s("search_btn").onclick = () => {
+    s("form_page").style.display = "none";
+    s("forecast_page").style.display = "block";
+}
+
+s("back_btn").onclick = () => {
+    s("form_page").style.display = "block";
+    s("forecast_page").style.display = "none";
+}
